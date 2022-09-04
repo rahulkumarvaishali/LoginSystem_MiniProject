@@ -1,0 +1,72 @@
+﻿@model LoginAuth.Models.DataClass
+@{
+    ViewBag.Title = "Form";
+}
+<style>
+    .error {
+        color: #f50606
+    }
+</style>
+
+<h2>Form</h2>
+<br />
+@using (Html.BeginForm("Form", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(m=>m.EmpId)
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.EmpName, new { @class = "form-control", @placeholde = "Please Enter Your Name", data_val = "true", data_val_required = "Please Enter Valid Name" })
+        @Html.ValidationMessageFor(m => m.EmpName, "", new { @class = "error" })
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        @Html.TextBoxFor(m => m.EmpEmail, new { @class = "form-control", @placeholde = "Please Enter Your Email", data_val = "true", data_val_required = "Please Enter Valid Email" })
+        @Html.ValidationMessageFor(m => m.EmpEmail, "", new { @class = "error" })
+    </div>
+
+    <div class="form-group">
+        <label>Department</label>
+        @Html.TextBoxFor(m => m.EmpDept, new { @class = "form-control", @placeholde = "Please Enter Your Department", data_val = "true", data_val_required = "Please Enter Valid Department" })
+        @Html.ValidationMessageFor(m => m.EmpDept, "", new { @class = "error" })
+    </div>
+
+
+    <div class="form-group">
+        <label>Mobile</label>
+        @Html.TextBoxFor(m => m.EmpMob, new { @class = "form-control", @placeholde = "Please Enter Your Mobile", data_val = "true", data_val_required = "Please Enter Valid Mobile" })
+        @Html.ValidationMessageFor(m => m.EmpMob, "", new { @class = "error" })
+    </div>
+
+    <div class="form-group">
+        <label>Address</label>
+        @Html.TextBoxFor(m => m.EmpAddress, new { @class = "form-control", @placeholde = "Please Enter Your Address", data_val = "true", data_val_required = "Please Enter Valid Address" })
+        @Html.ValidationMessageFor(m => m.EmpAddress, "", new { @class = "error" })
+    </div>
+
+    <div class="form-group">
+        <label>Salary</label>
+        @Html.TextBoxFor(m => m.EmpSalary, new { @class = "form-control", @placeholde = "Please Enter Your Salary", data_val = "true", data_val_required = "Please Enter Valid Salary" })
+        @Html.ValidationMessageFor(m => m.EmpSalary, "", new { @class = "error" })
+    </div>
+
+    <div class="form-group">
+        <label>Zender</label>
+        @Html.TextBoxFor(m => m.EmpZender, new { @class = "form-control", @placeholde = "Please Enter Your Zender", data_val = "true", data_val_required = "Please Enter Valid Zender" })
+        @Html.ValidationMessageFor(m => m.EmpZender, "", new { @class = "error" })
+    </div>
+
+    <div class="form-group">
+        <label>ZipCode</label>
+        @Html.TextBoxFor(m => m.EmpZip, new { @class = "form-control", @placeholde = "Please Enter Your Pincode", data_val = "true", data_val_required = "Please Enter Valid Pincode" })
+        @Html.ValidationMessageFor(m => m.EmpZip, "", new { @class = "error" })
+    </div>
+
+    <div class="form-group">
+        <label>About</label>
+        @Html.TextBoxFor(m => m.EmpAbout, new { @class = "form-control", @placeholde = "Please Enter Your About", data_val = "true", data_val_required = "Please Enter Valid About" })
+        @Html.ValidationMessageFor(m => m.EmpAbout, "", new { @class = "error" })
+    </div>
+    <button class="btn btn-success" type="submit">Submit</button>
+    <button class="btn btn-danger" type="reset">Reset</button>
+}

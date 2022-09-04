@@ -1,0 +1,31 @@
+﻿@model LoginAuth.Models.LoginClass
+@{
+    ViewBag.Title = "LoginForm";
+}
+<style>
+    .error{
+        color:#f10c0c
+    }
+</style>
+<h2>LoginForm</h2>
+
+@using(Html.BeginForm("LoginForm","Home",FormMethod.Post))
+            
+            {
+   
+                <div class="form-group">
+                    <label>Email</label>
+                    @Html.TextBoxFor(m => m.Email, new {@class= "form-control",@placeholder="Please Enter yor Email",data_val="true",data_val_required="Please Enter ValidEmail" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new {@class="error"})
+                    <span class="error">@TempData["email"]</span>
+
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    @Html.PasswordFor(m => m.Password, new {@class= "form-control",@placeholder="Please Enter Your Password",data_val="true",data_val_required="Please Enter Correct Password" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new {@class="error"})
+                    <span class="error"@TempData["Pass"]></span>
+                </div>
+                <button class="btn btn-success" type="submit">Submit</button>
+                <button class="btn btn-danger" type="reset">Reset</button>
+            }

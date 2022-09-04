@@ -1,0 +1,42 @@
+﻿@model List<LoginAuth.Models.DataClass>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<h1>Data Table</h1>
+<br />
+<table class="table table-bordered table-responsive">
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+        <th>EmpEmail</th>
+        <th>EmpDept</th>
+        <th>EmpMob</th>
+        <th>EmpAddress</th>
+        <th>EmpSalary</th>
+        <th>EmpZender</th>
+        <th>EmpZip</th>
+        <th>EmpAbout</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EmpId</td>
+            <td>@item.EmpName</td>
+            <td>@item.EmpEmail</td>
+            <td>@item.EmpDept</td>
+            <td>@item.EmpMob</td>
+            <td>@item.EmpAddress</td>
+            <td>@item.EmpSalary</td>
+            <td>@item.EmpZender</td>
+            <td>@item.EmpZip</td>
+            <td>@item.EmpAbout</td>
+            <td><a href="@Url.Action("Delete", "Home", new {item.EmpId})"class="btn btn-danger">Delete</a></td>
+            <td><a href="@Url.Action("Edit", "Home", new {item.EmpId})"class="btn btn-success">Edit</a></td>
+            <td><a href="@Url.Action("Form", "Home", new {item.EmpId})"class="btn btn-primary">Add</a></td>
+        </tr>
+    }
+
+</table>
+
